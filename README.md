@@ -29,7 +29,7 @@ This project allows users to apply different image encryption techniques such as
 
 ## 📸 Project Preview
 
-![Preview](assets/preview.png)
+![Preview](assets/Preview.png)
 
 ---
 
