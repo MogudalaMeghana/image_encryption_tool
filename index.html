@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Secure Pixel Encryptor</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <h1>Secure Pixel Encryptor</h1>
+
+            <p>
+                Encrypt and decrypt images
+                using multiple image processing techniques
+            </p>
+
+        </div>
+
+
+        <div
+            class="message"
+            id="messageBox"
+        ></div>
+
+
+        <div class="controls">
+
+            <input
+                type="file"
+                id="upload"
+                accept="image/*"
+            >
+
+            <input
+                type="number"
+                id="key"
+                placeholder="Enter Encryption Key"
+            >
+
+            <button
+                class="encrypt"
+                onclick="encryptImage()"
+            >
+                Encrypt
+            </button>
+
+            <button
+                class="decrypt"
+                onclick="decryptImage()"
+            >
+                Decrypt
+            </button>
+
+            <button
+                class="download"
+                onclick="downloadImage()"
+            >
+                Download
+            </button>
+
+        </div>
+
+
+        <div class="techniques">
+
+            <div
+                class="tech-card rgb"
+                data-tech="rgb"
+                onclick="toggleTechnique(this)"
+            >
+
+                RGB Operation
+
+                <div class="tooltip">
+
+                    <h3>RGB Operation</h3>
+
+                    <p>
+                        Changes RGB values of image pixels.
+                    </p>
+
+                    <div class="use">
+                        Used for simple image protection.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="tech-card swap"
+                data-tech="swap"
+                onclick="toggleTechnique(this)"
+            >
+
+                Pixel Swapping
+
+                <div class="tooltip">
+
+                    <h3>Pixel Swapping</h3>
+
+                    <p>
+                        Swaps pixel color channels.
+                    </p>
+
+                    <div class="use">
+                        Used in image scrambling systems.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="tech-card xor"
+                data-tech="xor"
+                onclick="toggleTechnique(this)"
+            >
+
+                XOR Encryption
+
+                <div class="tooltip">
+
+                    <h3>XOR Encryption</h3>
+
+                    <p>
+                        Uses XOR logic with secret key.
+                    </p>
+
+                    <div class="use">
+                        Used in cybersecurity encryption.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="tech-card invert"
+                data-tech="invert"
+                onclick="toggleTechnique(this)"
+            >
+
+                Color Inversion
+
+                <div class="tooltip">
+
+                    <h3>Color Inversion</h3>
+
+                    <p>
+                        Converts colors into opposite shades.
+                    </p>
+
+                    <div class="use">
+                        Used in image processing effects.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="canvas-wrapper">
+
+
+            <div class="canvas-box">
+
+                <h2>Original Image</h2>
+
+                <canvas id="originalCanvas"></canvas>
+
+            </div>
+
+
+            <div class="canvas-box">
+
+                <h2>Processed Image</h2>
+
+                <div
+                    class="placeholder"
+                    id="placeholder"
+                >
+
+                    Encrypted or decrypted image
+                    will appear here
+
+                </div>
+
+                <canvas
+                    id="processedCanvas"
+                    style="display:none;"
+                ></canvas>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+
+            Built using HTML, CSS and JavaScript
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
